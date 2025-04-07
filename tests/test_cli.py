@@ -26,4 +26,4 @@ def test_cli_run(runner, gff_file):
         fields = re.split(r"\s+", line.strip())
         assert len(fields) == 9
         assert fields[2] == "gene"
-        assert fields[8].startswith("GL_Type=")
+        assert re.search("GL_Feature=", fields[8])
